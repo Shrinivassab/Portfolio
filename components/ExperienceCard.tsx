@@ -25,7 +25,7 @@ export default function ExperienceCard({}: Props) {
            }}
             className="w-32 h-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover
                 object-center"
-            src="https://images4.alphacoders.com/105/thumbbig-1055056.webp"
+            src="https://assets.locations.ups.com/images/logo.png"
             alt=""
            />
            <div className="px-0 md:px-10">
