@@ -1,11 +1,11 @@
 import {groq} from "next-sanity";
 import {NextApiRequest, NextApiResponse} from "next";
 import {sanityClient} from "../../sanity";
-import {PageInfo, Project, Skill} from "../../typings";
+import {PageInfo} from "../../typings";
 
 
 const query = groq`
-    *[_type == 'project'][0]
+    *[_type == 'pageInfo'][0]
 `
 
 type Data = {

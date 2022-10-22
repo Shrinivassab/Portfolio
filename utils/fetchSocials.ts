@@ -1,4 +1,4 @@
-import {Skill, Social} from "../typings";
+import {Social} from "../typings";
 
 
 export const fetchSocials = async() => {

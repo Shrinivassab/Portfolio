@@ -5,7 +5,7 @@ interface SanityBody {
     _updatedAt: string;
 }
 
-interface Image {
+interface Image  {
     _type: "image";
     asset: {
         _ref: string;
@@ -42,6 +42,7 @@ export interface Skill extends SanityBody {
 export interface Experience extends SanityBody {
     _type: "experience";
     company: string;
+    companyName: string;
     companyImage: Image;
     dateStarted: data;
     dateEnded: date;
@@ -57,7 +58,7 @@ export interface Project extends SanityBody {
     image: Image;
     linkToBuild: string;
     summary: string;
-    technology: Technology[];
+    technologies: Technology[];
 }
 
 export interface Social extends SanityBody {

@@ -1,4 +1,4 @@
-import {PageInfo, Skill, Social} from "../typings";
+import {PageInfo} from "../typings";
 
 
 export const fetchPageInfo = async() => {

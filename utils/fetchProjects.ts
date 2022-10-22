@@ -1,4 +1,4 @@
-import {Skill, Social} from "../typings";
+import {Project, Skill, Social} from "../typings";
 
 
 export const fetchProjects = async() => {
@@ -7,7 +7,7 @@ export const fetchProjects = async() => {
     );
 
     const data = await res.json();
-    const projects: Social[] = data.projects;
+    const projects: Project[] = data.projects;
 
     return projects;
 }

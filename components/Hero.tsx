@@ -3,16 +3,19 @@ import PropTypes from 'prop-types';
 import {Cursor, useTypewriter} from "react-simple-typewriter/dist";
 import BackgroundCircles from "./BackgroundCircles";
 import Link from "next/link";
+import {PageInfo} from "../typings";
+import {urlFor} from "../sanity";
 
-type Props = {}
+type Props = {
+    pageInfo: PageInfo
+}
 
-export default function Hero({}: Props) {
-    const [text, count] = useTypewriter({
+export default function Hero({ pageInfo }: Props) {
+    const [text] = useTypewriter({
         words: [
-          "Hi I am Shrinivass",
-            "I am a Dancer",
+           `Hi I am ${pageInfo?.name}`,
             "I am a Full Stack Developer",
-            "I am a Table-Tennis and Tennis Player",
+            "Eat... Sleep... Code..."
         ],
         loop: true,
         delaySpeed: 2000
@@ -20,14 +23,15 @@ export default function Hero({}: Props) {
     return(
         <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
             <BackgroundCircles/>
-            <img
-                className="relative rounded-full h-32 w-32 mx-auto object-cover"
-                src="https://cdn-images.win.gg/resize/w/620/format/webp/type/progressive/fit/cover/path/wp/uploads/2022/04/Spirit-Blossom-Yasuo.jpg"
-                alt="Yasuo"
-            />
+                <img
+                    className="relative rounded-full h-32 w-32 mx-auto object-cover"
+                    src={urlFor(pageInfo?.heroImage).url()}
+                    alt="Shrini"
+                />
+
             <div className="z-20">
                 <h2 className="text-sm uppercase text-grey-500 pb-2 tracking-[15px]">
-                    Full Stack Engineer
+                    {pageInfo?.role}
                 </h2>
                 <h1 className="text-5xl lg:text-6xl font-semibold px-10">
                     <span className="mr-3">{text}</span>

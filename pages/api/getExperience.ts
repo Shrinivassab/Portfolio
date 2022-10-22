@@ -1,14 +1,14 @@
 import {groq} from "next-sanity";
 import {NextApiRequest, NextApiResponse} from "next";
 import {sanityClient} from "../../sanity";
-import {Experience, Project, Skill} from "../../typings";
+import {Experience} from "../../typings";
 
 
 const query = groq`
     *[_type == 'experience']{
-  ...,
-  technologies[]->
-}
+      ...,
+      technologies[]->
+    }
 `
 
 type Data = {
